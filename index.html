@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Address</title>
+    <style>
+        body {
+            font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            /* Darker background */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0 10px;
+            background: url(./IMG-20240302-WA0020.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            object-fit: contain;
+
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff38;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1,
+        p {
+            color: #4CAF50;
+        }
+
+        p {
+            font-weight: bolder;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .images img {
+            width: calc(20% - 5px);
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin: 20px 0;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: #555;
+            /* Darker input background */
+            color: #fff;
+            /* White text in input */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>We accept payments on..</h1>
+        <div class="images">
+            <img src="./cashapp image.jfif" alt="Image 1">
+            <img src="./paypal image.png" alt="Image 2">
+            <img src="./eth logo3.jfif" alt="Image 3">
+            <img src="./btc image3.png" alt="Image 4">
+        </div>
+        <div class="input-group">
+            <div class="message">
+                <p>"Click the button to copy the subscriber's address." <br> For Activation.</p>
+            </div>
+            <div>
+                <input type="text" id="inputField" value="bc1qz73xqy85wld24svgp6yhamm3wz26f7580u5y3z">
+                <button onclick="copyText()">Copy Address</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function copyText() {
+            var input = document.getElementById("inputField");
+            input.select();
+            input.setSelectionRange(0, 99999); /* For mobile devices */
+            navigator.clipboard.writeText(input.value);
+            alert("Copied the text: " + input.value);
+        }
+    </script>
+</body>
+
+</html>
